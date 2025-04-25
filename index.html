@@ -4,658 +4,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Premium Honey Products</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
-        }
-        
-        body {
-            background-color: #f9f9f9;
-            color: #333;
-        }
-        
-        .header {
-            background-color: #ffc107;
-            padding: 15px 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #333;
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav-links li {
-            margin-left: 20px;
-        }
-        
-        .nav-links a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-        }
-        
-        .hero {
-            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1587049352851-8d4e89133924');
-            background-size: cover;
-            background-position: center;
-            height: 500px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-align: center;
-        }
-        
-        .hero-content h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
-        
-        .hero-content p {
-            font-size: 20px;
-            margin-bottom: 30px;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background-color: #ffc107;
-            color: #333;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: all 0.3s ease;
-        }
-        
-        .btn:hover {
-            background-color: #ffca28;
-            transform: translateY(-3px);
-        }
-        
-        .products {
-            padding: 80px 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-            font-size: 36px;
-        }
-        
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 30px;
-        }
-        
-        .product-card {
-            background-color: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-        }
-        
-        .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-        }
-        
-        .product-image {
-            height: 200px;
-            overflow: hidden;
-        }
-        
-        .product-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .product-info {
-            padding: 20px;
-        }
-        
-        .product-title {
-            font-size: 20px;
-            margin-bottom: 10px;
-        }
-        
-        .product-description {
-            color: #666;
-            margin-bottom: 15px;
-        }
-        
-        .product-price {
-            font-size: 22px;
-            font-weight: bold;
-            color: #ffc107;
-            margin-bottom: 15px;
-        }
-        
-        .add-to-cart {
-            width: 100%;
-            padding: 10px;
-            background-color: #ffc107;
-            border: none;
-            border-radius: 5px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .add-to-cart:hover {
-            background-color: #ffca28;
-        }
-        
-        .cart-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.5);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .cart-content {
-            background-color: white;
-            width: 90%;
-            max-width: 600px;
-            border-radius: 10px;
-            padding: 30px;
-            max-height: 80vh;
-            overflow-y: auto;
-        }
-        
-        .cart-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        
-        .close-cart {
-            font-size: 24px;
-            cursor: pointer;
-        }
-        
-        .cart-items {
-            margin-bottom: 20px;
-        }
-        
-        .cart-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 0;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .cart-total {
-            font-size: 20px;
-            font-weight: bold;
-            text-align: right;
-            margin-bottom: 20px;
-        }
-        
-        .checkout-form {
-            display: none;
-        }
-        
-        .form-group {
-            margin-bottom: 15px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: 500;
-        }
-        
-        .form-group input {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-        
-        .checkout-btn {
-            width: 100%;
-            padding: 12px;
-            background-color: #ffc107;
-            border: none;
-            border-radius: 5px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .checkout-btn:hover {
-            background-color: #ffca28;
-        }
-        
-        .footer {
-            background-color: #333;
-            color: white;
-            padding: 40px 0;
-            text-align: center;
-        }
-        
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-        }
-        
-        .footer-section {
-            flex: 1;
-            min-width: 250px;
-            margin-bottom: 20px;
-        }
-        
-        .footer-section h3 {
-            margin-bottom: 20px;
-        }
-        
-        .footer-section p, .footer-section a {
-            color: #bbb;
-            margin-bottom: 10px;
-            display: block;
-            text-decoration: none;
-        }
-        
-        .copyright {
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 1px solid #444;
-        }
-        
-        @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-            }
-            
-            .nav-links {
-                margin-top: 15px;
-            }
-            
-            .hero-content h1 {
-                font-size: 36px;
-            }
-            
-            .hero-content p {
-                font-size: 18px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- Search Bar -->
+    <div class="search-bar">
+        <div class="container">
+            <form action="/search" method="GET">
+                <input type="text" placeholder="Search products..." name="query">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Header with Navigation -->
     <header class="header">
         <div class="container">
             <div class="header-content">
-                <div class="logo">Golden Honey</div>
-                <ul class="nav-links">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#products">Products</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
+                <div class="logo">
+                    <img src="images/logo.png" alt="Golden Honey">
+                </div>
+                <nav class="main-nav">
+                    <ul class="nav-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="special-offers.html">Special Offers</a></li>
+                        <li><a href="honey-mixtures.html">Honey Mixtures</a></li>
+                        <li><a href="bee-products.html">Bee Products</a></li>
+                        <li><a href="ghee-oils.html">Ghee & Oils</a></li>
+                        <li><a href="shad-coffee.html">Shad Coffee</a></li>
+                        <li><a href="other-products.html">Other Products</a></li>
+                        <li><a href="products.html">All Categories</a></li>
+                    </ul>
+                </nav>
+                <div class="cart-icon">
+                    <span id="cart-count">0</span>
+                </div>
             </div>
         </div>
     </header>
-    
+
+    <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-content">
-            <h1>Pure, Natural Honey</h1>
-            <p>Discover the finest quality honey from our local beekeepers</p>
-            <a href="#products" class="btn">Shop Now</a>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Pure, Natural Honey</h1>
+                <p>Discover the finest quality honey from our local beekeepers</p>
+                <a href="products.html" class="btn">Shop Now</a>
+            </div>
         </div>
     </section>
-    
-    <section class="products" id="products">
+
+    <!-- Featured Products Section -->
+    <section class="featured-products">
         <div class="container">
-            <h2 class="section-title">Our Premium Honey Collection</h2>
+            <h2 class="section-title">Featured Products</h2>
             <div class="product-grid">
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1587049352851-8d4e89133924" alt="Wildflower Honey">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Wildflower Honey</h3>
-                        <p class="product-description">Collected from various wildflowers, this honey has a rich, complex flavor.</p>
-                        <div class="product-price">$12.99</div>
-                        <button class="add-to-cart" data-id="1" data-name="Wildflower Honey" data-price="12.99">Add to Cart</button>
-                    </div>
-                </div>
-                
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1558645832-ea6a6b4e6647" alt="Manuka Honey">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Manuka Honey</h3>
-                        <p class="product-description">Premium medicinal honey from New Zealand with unique health benefits.</p>
-                        <div class="product-price">$29.99</div>
-                        <button class="add-to-cart" data-id="2" data-name="Manuka Honey" data-price="29.99">Add to Cart</button>
-                    </div>
-                </div>
-                
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1587049352851-8d4e89133924" alt="Acacia Honey">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Acacia Honey</h3>
-                        <p class="product-description">Light and delicate honey with a subtle floral aroma.</p>
-                        <div class="product-price">$15.99</div>
-                        <button class="add-to-cart" data-id="3" data-name="Acacia Honey" data-price="15.99">Add to Cart</button>
-                    </div>
-                </div>
-                
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1587049352851-8d4e89133924" alt="Buckwheat Honey">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Buckwheat Honey</h3>
-                        <p class="product-description">Dark, robust honey packed with antioxidants and minerals.</p>
-                        <div class="product-price">$18.99</div>
-                        <button class="add-to-cart" data-id="4" data-name="Buckwheat Honey" data-price="18.99">Add to Cart</button>
-                    </div>
-                </div>
+                <!-- Products will be loaded via JavaScript -->
             </div>
         </div>
     </section>
-    
-    <section class="about" id="about">
-        <div class="container">
-            <h2 class="section-title">About Golden Honey</h2>
-            <p style="text-align: center; max-width: 800px; margin: 0 auto 30px; line-height: 1.6;">
-                Golden Honey is a family-owned business dedicated to providing the highest quality, pure honey products. 
-                Our honey is sourced directly from trusted beekeepers who practice sustainable beekeeping methods. 
-                We never dilute or pasteurize our honey, ensuring you get all the natural enzymes, antioxidants, 
-                and health benefits that nature intended.
-            </p>
-        </div>
-    </section>
-    
-    <footer class="footer" id="contact">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Contact Us</h3>
-                    <p>Email: info@goldenhoney.com</p>
-                    <p>Phone: +1 (555) 123-4567</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <a href="#">Home</a>
-                    <a href="#products">Products</a>
-                    <a href="#about">About Us</a>
-                </div>
-                <div class="footer-section">
-                    <h3>Follow Us</h3>
-                    <a href="#">Facebook</a>
-                    <a href="#">Instagram</a>
-                    <a href="#">Twitter</a>
-                </div>
-            </div>
-            <div class="copyright">
-                <p>&copy; 2023 Golden Honey. All rights reserved.</p>
-            </div>
-        </div>
+
+    <!-- Other Sections (About, etc.) -->
+    <!-- ... -->
+
+    <!-- Footer -->
+    <footer class="footer">
+        <!-- ... -->
     </footer>
-    
+
+    <!-- Cart Modal -->
     <div class="cart-modal" id="cartModal">
-        <div class="cart-content">
-            <div class="cart-header">
-                <h2>Your Cart</h2>
-                <span class="close-cart">&times;</span>
-            </div>
-            <div class="cart-items" id="cartItems">
-                <!-- Cart items will be added here dynamically -->
-            </div>
-            <div class="cart-total" id="cartTotal">
-                Total: $0.00
-            </div>
-            <button class="btn" id="proceedToCheckout">Proceed to Checkout</button>
-            
-            <div class="checkout-form" id="checkoutForm">
-                <h3 style="margin-bottom: 20px;">Shipping Information</h3>
-                <div class="form-group">
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="address">Shipping Address</label>
-                    <input type="text" id="address" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" required>
-                </div>
-                <div class="form-group">
-                    <label for="whatsapp">WhatsApp Number</label>
-                    <input type="tel" id="whatsapp" required>
-                </div>
-                
-                <h3 style="margin: 20px 0;">Payment Information</h3>
-                <div class="form-group">
-                    <label for="cardNumber">Card Number</label>
-                    <input type="text" id="cardNumber" required>
-                </div>
-                <div class="form-group">
-                    <label for="expiry">Expiry Date</label>
-                    <input type="text" id="expiry" placeholder="MM/YY" required>
-                </div>
-                <div class="form-group">
-                    <label for="cvv">CVV</label>
-                    <input type="text" id="cvv" required>
-                </div>
-                
-                <button class="checkout-btn" id="completeOrder">Complete Order via WhatsApp</button>
-            </div>
-        </div>
+        <!-- ... -->
     </div>
-    
-    <script>
-        // Cart functionality
-        let cart = [];
-        
-        // DOM elements
-        const cartModal = document.getElementById('cartModal');
-        const cartItemsContainer = document.getElementById('cartItems');
-        const cartTotalElement = document.getElementById('cartTotal');
-        const closeCartBtn = document.querySelector('.close-cart');
-        const proceedToCheckoutBtn = document.getElementById('proceedToCheckout');
-        const checkoutForm = document.getElementById('checkoutForm');
-        const completeOrderBtn = document.getElementById('completeOrder');
-        const addToCartButtons = document.querySelectorAll('.add-to-cart');
-        
-        // Open cart modal
-        function openCart() {
-            cartModal.style.display = 'flex';
-            renderCartItems();
-        }
-        
-        // Close cart modal
-        function closeCart() {
-            cartModal.style.display = 'none';
-        }
-        
-        // Render cart items
-        function renderCartItems() {
-            if (cart.length === 0) {
-                cartItemsContainer.innerHTML = '<p>Your cart is empty</p>';
-                cartTotalElement.textContent = 'Total: $0.00';
-                proceedToCheckoutBtn.style.display = 'none';
-                return;
-            }
-            
-            cartItemsContainer.innerHTML = '';
-            let total = 0;
-            
-            cart.forEach(item => {
-                const cartItemElement = document.createElement('div');
-                cartItemElement.className = 'cart-item';
-                cartItemElement.innerHTML = `
-                    <div>
-                        <h4>${item.name}</h4>
-                        <p>$${item.price} x ${item.quantity}</p>
-                    </div>
-                    <div>
-                        <button class="remove-item" data-id="${item.id}">Remove</button>
-                    </div>
-                `;
-                cartItemsContainer.appendChild(cartItemElement);
-                
-                total += item.price * item.quantity;
-            });
-            
-            cartTotalElement.textContent = `Total: $${total.toFixed(2)}`;
-            proceedToCheckoutBtn.style.display = 'block';
-            
-            // Add event listeners to remove buttons
-            document.querySelectorAll('.remove-item').forEach(button => {
-                button.addEventListener('click', function() {
-                    const id = parseInt(this.getAttribute('data-id'));
-                    removeFromCart(id);
-                });
-            });
-        }
-        
-        // Add to cart
-        function addToCart(id, name, price) {
-            const existingItem = cart.find(item => item.id === id);
-            
-            if (existingItem) {
-                existingItem.quantity += 1;
-            } else {
-                cart.push({
-                    id,
-                    name,
-                    price: parseFloat(price),
-                    quantity: 1
-                });
-            }
-            
-            renderCartItems();
-            openCart();
-        }
-        
-        // Remove from cart
-        function removeFromCart(id) {
-            cart = cart.filter(item => item.id !== id);
-            renderCartItems();
-        }
-        
-        // Proceed to checkout
-        function proceedToCheckout() {
-            checkoutForm.style.display = 'block';
-            proceedToCheckoutBtn.style.display = 'none';
-        }
-        
-        // Complete order via WhatsApp
-        function completeOrder() {
-            const name = document.getElementById('name').value;
-            const address = document.getElementById('address').value;
-            const phone = document.getElementById('phone').value;
-            const whatsapp = document.getElementById('whatsapp').value;
-            const cardNumber = document.getElementById('cardNumber').value;
-            const expiry = document.getElementById('expiry').value;
-            const cvv = document.getElementById('cvv').value;
-            
-            // Validate form
-            if (!name || !address || !phone || !whatsapp || !cardNumber || !expiry || !cvv) {
-                alert('Please fill in all fields');
-                return;
-            }
-            
-            // Prepare order summary
-            let orderSummary = `*NEW ORDER*%0A%0A`;
-            orderSummary += `*Customer Information:*%0A`;
-            orderSummary += `Name: ${name}%0A`;
-            orderSummary += `Address: ${address}%0A`;
-            orderSummary += `Phone: ${phone}%0A`;
-            orderSummary += `WhatsApp: ${whatsapp}%0A%0A`;
-            
-            orderSummary += `*Order Items:*%0A`;
-            let total = 0;
-            cart.forEach(item => {
-                orderSummary += `${item.name} - $${item.price} x ${item.quantity} = $${(item.price * item.quantity).toFixed(2)}%0A`;
-                total += item.price * item.quantity;
-            });
-            orderSummary += `%0A*Total: $${total.toFixed(2)}*%0A%0A`;
-            
-            orderSummary += `*Payment Information:*%0A`;
-            orderSummary += `Card: ${cardNumber}%0A`;
-            orderSummary += `Expiry: ${expiry}%0A`;
-            orderSummary += `CVV: ${cvv}`;
-            
-            // Replace with your WhatsApp number in international format (remove +, spaces, etc.)
-            const whatsappNumber = '1234567890'; // Example: replace with your actual number
-            
-            // Create WhatsApp link
-            const whatsappLink = `https://wa.me/${whatsappNumber}?text=${orderSummary}`;
-            
-            // Open WhatsApp in a new tab
-            window.open(whatsappLink, '_blank');
-            
-            // Reset cart and close modal
-            cart = [];
-            checkoutForm.style.display = 'none';
-            closeCart();
-            
-            // Show confirmation
-            alert('Your order has been submitted via WhatsApp! We will contact you shortly.');
-        }
-        
-        // Event listeners
-        addToCartButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                const id = parseInt(this.getAttribute('data-id'));
-                const name = this.getAttribute('data-name');
-                const price = this.getAttribute('data-price');
-                addToCart(id, name, price);
-            });
-        });
-        
-        closeCartBtn.addEventListener('click', closeCart);
-        proceedToCheckoutBtn.addEventListener('click', proceedToCheckout);
-        completeOrderBtn.addEventListener('click', completeOrder);
-        
-        // Close modal when clicking outside
-        window.addEventListener('click', function(event) {
-            if (event.target === cartModal) {
-                closeCart();
-            }
-        });
-    </script>
+
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
 </body>
 </html>
