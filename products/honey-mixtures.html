@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خلطات العسل | Golden Honey</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/category.css">
+</head>
+<body>
+    <!-- Search Bar -->
+    <div class="search-bar">
+        <div class="container">
+            <form action="/search" method="GET">
+                <input type="text" placeholder="ابحث عن منتجات..." name="query">
+                <button type="submit">بحث</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="../images/logo.png" alt="Golden Honey">
+                </div>
+                <nav class="main-nav">
+                    <ul class="nav-links">
+                        <li><a href="../index.html">الرئيسية</a></li>
+                        <li><a href="special-offers.html">العروض الخاصة</a></li>
+                        <li><a href="honey-mixtures.html" class="active">خلطات العسل</a></li>
+                        <li><a href="bee-products.html">منتجات النحل</a></li>
+                        <li><a href="ghee-oils.html">السمن والزيوت</a></li>
+                        <li><a href="shad-coffee.html">قهوة شذ</a></li>
+                        <li><a href="other-products.html">منتجات أخرى</a></li>
+                        <li><a href="../products.html">كل الفئات</a></li>
+                    </ul>
+                </nav>
+                <div class="cart-icon">
+                    <span id="cart-count">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Category Banner -->
+    <section class="category-banner">
+        <div class="container">
+            <h1>خلطات العسل</h1>
+            <p>اكتشف خلطاتنا الفريدة من العسل الطبيعي مع المكونات الصحية</p>
+        </div>
+    </section>
+
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs">
+        <div class="container">
+            <a href="../index.html">الرئيسية</a> /
+            <span>خلطات العسل</span>
+        </div>
+    </div>
+
+    <!-- Category Content -->
+    <section class="category-content">
+        <div class="container">
+            <div class="category-sidebar">
+                <h3>تصفية حسب</h3>
+                <div class="filter-section">
+                    <h4>السعر</h4>
+                    <div class="price-range">
+                        <input type="range" min="0" max="500" value="250">
+                        <div class="range-values">
+                            <span>0 ر.س</span>
+                            <span>500 ر.س</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="filter-section">
+                    <h4>العلامة التجارية</h4>
+                    <ul class="brand-list">
+                        <li><label><input type="checkbox"> Golden Honey</label></li>
+                        <li><label><input type="checkbox"> العسل الذهبي</label></li>
+                        <li><label><input type="checkbox"> شهد النحل</label></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="category-products">
+                <div class="sort-options">
+                    <span>ترتيب حسب:</span>
+                    <select>
+                        <option>الأكثر مبيعاً</option>
+                        <option>الأحدث</option>
+                        <option>السعر: من الأقل للأعلى</option>
+                        <option>السعر: من الأعلى للأقل</option>
+                    </select>
+                </div>
+                
+                <div class="product-grid">
+                    <!-- Product 1 -->
+                    <div class="product-card">
+                        <div class="product-badges">
+                            <span class="sale-badge">خصم 20%</span>
+                        </div>
+                        <div class="product-image">
+                            <img src="../images/honey-mixture1.jpg" alt="عسل بالجنسنج">
+                            <button class="quick-view">عرض سريع</button>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">عسل بالجنسنج</h3>
+                            <div class="product-price">
+                                <span class="current-price">120 ر.س</span>
+                                <span class="old-price">150 ر.س</span>
+                            </div>
+                            <div class="product-actions">
+                                <button class="add-to-cart">أضف إلى السلة</button>
+                                <button class="wishlist"><i class="far fa-heart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 2 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="../images/honey-mixture2.jpg" alt="عسل بالحبة السوداء">
+                            <button class="quick-view">عرض سريع</button>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">عسل بالحبة السوداء</h3>
+                            <div class="product-price">
+                                <span class="current-price">95 ر.س</span>
+                            </div>
+                            <div class="product-actions">
+                                <button class="add-to-cart">أضف إلى السلة</button>
+                                <button class="wishlist"><i class="far fa-heart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- More products... -->
+                </div>
+                
+                <div class="pagination">
+                    <a href="#" class="active">1</a>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#">التالي <i class="fas fa-chevron-left"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>روابط سريعة</h3>
+                    <ul>
+                        <li><a href="../index.html">الرئيسية</a></li>
+                        <li><a href="about.html">من نحن</a></li>
+                        <li><a href="contact.html">اتصل بنا</a></li>
+                        <li><a href="privacy.html">سياسة الخصوصية</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>خدمة العملاء</h3>
+                    <ul>
+                        <li><a href="shipping.html">الشحن والتوصيل</a></li>
+                        <li><a href="returns.html">الإرجاع والاستبدال</a></li>
+                        <li><a href="faq.html">الأسئلة الشائعة</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>تواصل معنا</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-phone"></i> +966 50 123 4567</li>
+                        <li><i class="fas fa-envelope"></i> info@goldenhoney.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> الرياض، المملكة العربية السعودية</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2023 Golden Honey. جميع الحقوق محفوظة</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Quick View Modal -->
+    <div class="modal quick-view-modal" id="quickViewModal">
+        <!-- Modal content will be loaded via JavaScript -->
+    </div>
+
+    <!-- Cart Modal -->
+    <div class="modal cart-modal" id="cartModal">
+        <!-- Cart content will be loaded via JavaScript -->
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/cart.js"></script>
+    <script src="../js/category.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>
