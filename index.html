@@ -3,81 +3,278 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium Honey Products</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>CNC Machine Project - Tamer Alashhab</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@700&display=swap');
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            color: white;
+        }
+        
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .slide {
+            width: 90%;
+            max-width: 900px;
+            height: auto;
+            margin: 20px auto;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: none;
+            animation: fadeIn 1s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+        }
+        
+        h1 { font-size: 2.5em; margin-bottom: 10px; }
+        h2 { font-size: 1.8em; color: #fdbb2d; }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+            margin: 10px auto;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        ul, ol { padding-left: 20px; }
+        li { margin: 10px 0; }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #444;
+        }
+        
+        th {
+            background-color: #b21f1f;
+            color: white;
+        }
+        
+        tr:hover { background-color: rgba(255, 255, 255, 0.1); }
+        
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #aaa;
+        }
+        
+        .controls {
+            text-align: center;
+            margin: 20px;
+        }
+        
+        button {
+            background: #b21f1f;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background 0.3s;
+        }
+        
+        button:hover { background: #8a1818; }
+    </style>
 </head>
 <body>
-    <!-- Search Bar -->
-    <div class="search-bar">
-        <div class="container">
-            <form action="/search" method="GET">
-                <input type="text" placeholder="Search products..." name="query">
-                <button type="submit">Search</button>
-            </form>
+    <!-- Slide 1: Title Slide -->
+    <div class="slide" id="slide1" style="display: block;">
+        <h1>CNC Machine Project</h1>
+        <img src="https://via.placeholder.com/400x200?text=CNC+Router+Image" alt="CNC Machine">
+        <h2>Student: Tamer Alashhab</h2>
+        <h3>Student ID: 210207322</h3>
+        <h3>Advisor: DIDEM KIVANC TURELI</h3>
+        <div class="footer">Graduation Project Presentation</div>
+    </div>
+
+    <!-- Slide 2: Introduction -->
+    <div class="slide" id="slide2">
+        <h2>Introduction to CNC Technology</h2>
+        <ul>
+            <li><strong>CNC</strong> = Computer Numerical Control</li>
+            <li>Automated control of machine tools via computer</li>
+            <li>Uses <strong>G-code</strong> from CAD models</li>
+        </ul>
+        <img src="https://via.placeholder.com/400x200?text=CNC+Workflow" alt="CNC Workflow">
+    </div>
+
+    <!-- Slide 3: Types and Applications -->
+    <div class="slide" id="slide3">
+        <h2>Types and Applications</h2>
+        <ul>
+            <li>CNC Waterjet</li>
+            <li>CNC Routers</li>
+            <li>CNC Plasma & Laser Cutters</li>
+        </ul>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center;">
+            <img src="https://via.placeholder.com/150x100?text=Waterjet" style="width: 23%; margin: 5px;">
+            <img src="https://via.placeholder.com/150x100?text=Router" style="width: 23%; margin: 5px;">
+            <img src="https://via.placeholder.com/150x100?text=Plasma" style="width: 23%; margin: 5px;">
+            <img src="https://via.placeholder.com/150x100?text=Laser" style="width: 23%; margin: 5px;">
         </div>
     </div>
 
-    <!-- Header with Navigation -->
-    <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <img src="images/logo.png" alt="Golden Honey">
-                </div>
-                <nav class="main-nav">
-                    <ul class="nav-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="special-offers.html">Special Offers</a></li>
-                        <li><a href="honey-mixtures.html">Honey Mixtures</a></li>
-                        <li><a href="bee-products.html">Bee Products</a></li>
-                        <li><a href="ghee-oils.html">Ghee & Oils</a></li>
-                        <li><a href="shad-coffee.html">Shad Coffee</a></li>
-                        <li><a href="other-products.html">Other Products</a></li>
-                        <li><a href="products.html">All Categories</a></li>
-                    </ul>
-                </nav>
-                <div class="cart-icon">
-                    <span id="cart-count">0</span>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Pure, Natural Honey</h1>
-                <p>Discover the finest quality honey from our local beekeepers</p>
-                <a href="products.html" class="btn">Shop Now</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Featured Products Section -->
-    <section class="featured-products">
-        <div class="container">
-            <h2 class="section-title">Featured Products</h2>
-            <div class="product-grid">
-                <!-- Products will be loaded via JavaScript -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Other Sections (About, etc.) -->
-    <!-- ... -->
-
-    <!-- Footer -->
-    <footer class="footer">
-        <!-- ... -->
-    </footer>
-
-    <!-- Cart Modal -->
-    <div class="cart-modal" id="cartModal">
-        <!-- ... -->
+    <!-- Slide 4: My CNC Router -->
+    <div class="slide" id="slide4">
+        <h2>My CNC Router Machine</h2>
+        <ul>
+            <li>Wood frame with 3-axis movement (X, Y, Z)</li>
+            <li>Adaptable platform for multiple tools</li>
+            <li>Linear rods and lead screws for motion</li>
+        </ul>
+        <img src="https://via.placeholder.com/400x250?text=CNC+Router+Design" alt="Router Design">
     </div>
 
-    <script src="js/main.js"></script>
-    <script src="js/cart.js"></script>
+    <!-- Slide 5: Motors and Control -->
+    <div class="slide" id="slide5">
+        <h2>Motors and Motion Control</h2>
+        <ul>
+            <li>Stepper Motors for precise movement</li>
+            <li>Each axis driven by step/direction pulses</li>
+            <li>High torque at low speeds</li>
+        </ul>
+        <img src="https://via.placeholder.com/300x200?text=Stepper+Motors" alt="Stepper Motors">
+    </div>
+
+    <!-- Slide 6: Electronics -->
+    <div class="slide" id="slide6">
+        <h2>Electronic Components</h2>
+        <ul>
+            <li>Arduino Uno</li>
+            <li>CNC Shield + Drivers</li>
+            <li>Power Supply</li>
+        </ul>
+        <div style="display: flex; justify-content: center;">
+            <img src="https://via.placeholder.com/150x150?text=Arduino" style="width: 30%; margin: 5px;">
+            <img src="https://via.placeholder.com/150x150?text=CNC+Shield" style="width: 30%; margin: 5px;">
+        </div>
+    </div>
+
+    <!-- Slide 7: Software -->
+    <div class="slide" id="slide7">
+        <h2>Software Workflow</h2>
+        <ul>
+            <li><strong>GRBL</strong>: Open-source CNC firmware</li>
+            <li>CAD/CAM: Fusion 360 or Solidworks</li>
+            <li>G-code generation + CNCjs for control</li>
+        </ul>
+        <img src="https://via.placeholder.com/400x200?text=Software+Workflow" alt="Software">
+    </div>
+
+    <!-- Slide 8: Materials -->
+    <div class="slide" id="slide8">
+        <h2>Materials and Costs</h2>
+        <table>
+            <tr>
+                <th>Component</th>
+                <th>Price (TL)</th>
+            </tr>
+            <tr>
+                <td>Stepper Motor (Nema 23)</td>
+                <td>1834 TL</td>
+            </tr>
+            <tr>
+                <td>Stepper Driver</td>
+                <td>235 TL</td>
+            </tr>
+            <tr>
+                <td>Arduino Uno</td>
+                <td>300 TL</td>
+            </tr>
+            <tr>
+                <td><strong>Total</strong></td>
+                <td><strong>2839 TL</strong></td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Slide 9: Challenges -->
+    <div class="slide" id="slide9">
+        <h2>Challenges and Solutions</h2>
+        <ul>
+            <li><strong>Wrong Materials:</strong> Replaced Nema 17 motors (600 TL loss)</li>
+            <li><strong>Mechanical Issues:</strong> Custom-fabricated lead screws and couplings</li>
+        </ul>
+        <img src="https://via.placeholder.com/400x200?text=Custom+Parts" alt="Custom Parts">
+    </div>
+
+    <!-- Slide 10: Conclusion -->
+    <div class="slide" id="slide10">
+        <h2>Conclusion</h2>
+        <ul>
+            <li>Successfully built a functional 3-axis CNC router</li>
+            <li>Gained hands-on experience in mechanics, electronics, and CNC programming</li>
+            <li>Improved problem-solving and adaptability</li>
+        </ul>
+        <div class="footer">Thank you for your attention!</div>
+    </div>
+
+    <!-- Navigation Controls -->
+    <div class="controls">
+        <button onclick="prevSlide()">Previous</button>
+        <button onclick="nextSlide()">Next</button>
+    </div>
+
+    <script>
+        let currentSlide = 1;
+        const totalSlides = 10;
+
+        function showSlide(n) {
+            for (let i = 1; i <= totalSlides; i++) {
+                document.getElementById(`slide${i}`).style.display = 'none';
+            }
+            document.getElementById(`slide${n}`).style.display = 'block';
+            currentSlide = n;
+        }
+
+        function nextSlide() {
+            if (currentSlide < totalSlides) {
+                showSlide(currentSlide + 1);
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 1) {
+                showSlide(currentSlide - 1);
+            }
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowRight') nextSlide();
+            if (e.key === 'ArrowLeft') prevSlide();
+        });
+    </script>
 </body>
 </html>
